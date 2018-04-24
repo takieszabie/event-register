@@ -36,6 +36,6 @@ public class MainController {
   @PostMapping("/register")
   public String registerNewUser(@ModelAttribute User filledUser) {
     userService.save(filledUser);
-    return "register";
+    return "redirect:/";
   }
 }
