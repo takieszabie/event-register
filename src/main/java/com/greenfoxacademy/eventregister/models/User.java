@@ -17,12 +17,12 @@ public class User {
   private String emailAddress;
   private boolean isAdmin;
 
-  public User(String userName, String familyName, String givenName, String emailAddress, boolean isAdmin) {
+  public User(String userName, String familyName, String givenName, String emailAddress) {
     this.userName = userName;
     this.familyName = familyName;
     this.givenName = givenName;
     this.emailAddress = emailAddress;
-    this.isAdmin = isAdmin;
+    isAdmin = false;
   }
 
   public User() {
