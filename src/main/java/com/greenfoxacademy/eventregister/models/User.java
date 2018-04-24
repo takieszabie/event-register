@@ -1,10 +1,13 @@
 package com.greenfoxacademy.eventregister.models;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+@JsonInclude(JsonInclude.Include.NON_NULL)
 @Entity
 public class User {
 
@@ -16,6 +19,14 @@ public class User {
   private String givenName;
   private String emailAddress;
   private boolean isAdmin;
+
+  public User(String userName, String familyName, String givenName, String emailAddress, boolean isAdmin) {
+    this.userName = userName;
+    this.familyName = familyName;
+    this.givenName = givenName;
+    this.emailAddress = emailAddress;
+    this.isAdmin = isAdmin;
+  }
 
   public User(String userName, String familyName, String givenName, String emailAddress) {
     this.userName = userName;

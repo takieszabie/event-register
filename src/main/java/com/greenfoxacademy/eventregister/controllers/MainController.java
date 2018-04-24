@@ -1,9 +1,7 @@
 package com.greenfoxacademy.eventregister.controllers;
 
 import com.greenfoxacademy.eventregister.models.User;
-import com.greenfoxacademy.eventregister.repositories.EventRepository;
-import com.greenfoxacademy.eventregister.repositories.UserRepository;
-import com.greenfoxacademy.eventregister.services.EventServiceIml;
+import com.greenfoxacademy.eventregister.services.EventServiceIpml;
 import com.greenfoxacademy.eventregister.services.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,7 +17,7 @@ public class MainController {
   UserServiceImpl userService;
 
   @Autowired
-  EventServiceIml eventService;
+  EventServiceIpml eventService;
 
   @GetMapping("/")
   public String showMain(Model model) {

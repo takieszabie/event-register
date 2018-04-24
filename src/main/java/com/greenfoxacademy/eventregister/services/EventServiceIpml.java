@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class EventServiceIml implements EventService {
+public class EventServiceIpml implements EventService {
   @Autowired
   EventRepository eventRepository;
 
