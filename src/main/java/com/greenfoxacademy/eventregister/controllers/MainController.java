@@ -33,6 +33,11 @@ public class MainController {
     return "register";
   }
 
+  @GetMapping("/login")
+  public String showLogin() {
+    return "login";
+  }
+
   @PostMapping("/register")
   public String registerNewUser(@ModelAttribute User filledUser) {
     userService.save(filledUser);
