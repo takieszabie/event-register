@@ -1,5 +1,6 @@
 package com.greenfoxacademy.eventregister.controllers;
 
+import com.greenfoxacademy.eventregister.models.User;
 import com.greenfoxacademy.eventregister.repositories.EventRepository;
 import com.greenfoxacademy.eventregister.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,9 +17,15 @@ public class MainController {
   @Autowired
   UserRepository userRepository;
 
-@GetMapping("/")
-public String showMain(Model model){
-  model.addAttribute("events", eventRepository.findAll());
-  return "main";
-}
+  @GetMapping("/")
+  public String showMain(Model model) {
+    model.addAttribute("events", eventRepository.findAll());
+    return "main";
+  }
+
+  @GetMapping("/register")
+  public String showRegister(Model model) {
+    model.addAttribute("user", new User());
+    return "register";
+  }
 }
