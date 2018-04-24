@@ -13,7 +13,7 @@ public class EventAppRestController {
   @Autowired
   UserServiceImpl userService;
 
-  @PostMapping("/registeradmin}")
+  @PostMapping("/registeradmin")
   public User user(@RequestBody(required = false) User user ){
     if (user == null){
       return null;

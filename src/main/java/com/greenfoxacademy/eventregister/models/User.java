@@ -28,14 +28,6 @@ public class User {
     this.isAdmin = isAdmin;
   }
 
-  public User(String userName, String familyName, String givenName, String emailAddress) {
-    this.userName = userName;
-    this.familyName = familyName;
-    this.givenName = givenName;
-    this.emailAddress = emailAddress;
-    isAdmin = false;
-  }
-
   public User() {
   }
 
