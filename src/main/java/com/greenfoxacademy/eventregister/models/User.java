@@ -15,12 +15,14 @@ public class User {
   private String familyName;
   private String givenName;
   private String emailAddress;
+  private boolean isAdmin;
 
-  public User(String userName, String familyName, String givenName, String emailAddress) {
+  public User(String userName, String familyName, String givenName, String emailAddress, boolean isAdmin) {
     this.userName = userName;
     this.familyName = familyName;
     this.givenName = givenName;
     this.emailAddress = emailAddress;
+    this.isAdmin = isAdmin;
   }
 
   public User() {
@@ -64,5 +66,13 @@ public class User {
 
   public void setEmailAddress(String emailAddress) {
     this.emailAddress = emailAddress;
+  }
+
+  public boolean isAdmin() {
+    return isAdmin;
+  }
+
+  public void setAdmin(boolean admin) {
+    isAdmin = admin;
   }
 }

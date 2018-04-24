@@ -9,5 +9,25 @@
 <body>
 <h1>Events available</h1>
 
+<div>Please <a href="http://localhost:8080/login">LOGIN</a> or <a href="http://localhost:8080/register">REGISTER</a>, so that you can sign up for the events below.</div>
+<br>
+<table border="1" style="width:auto">
+    <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Max participants</th>
+        <th>Participants</th>
+    </tr>
+
+    <tr th:each="event : ${events}">
+        <td th:text="${event.eventName}"></td>
+        <td th:text="${event.eventDescription}"></td>
+        <td th:text="${event.maxParticipants}"></td>
+        <td th:text="${event.participants}"></td>
+    </tr>
+
+</table>
+
+
 </body>
 </html>

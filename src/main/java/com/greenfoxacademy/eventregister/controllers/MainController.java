@@ -4,6 +4,7 @@ import com.greenfoxacademy.eventregister.repositories.EventRepository;
 import com.greenfoxacademy.eventregister.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
@@ -16,7 +17,8 @@ public class MainController {
   UserRepository userRepository;
 
 @GetMapping("/")
-public String showMain(){
+public String showMain(Model model){
+  model.addAttribute("events", eventRepository.findAll());
   return "main";
 }
 }
