@@ -1,9 +1,8 @@
 package com.greenfoxacademy.eventregister.controllers;
 
-import com.greenfoxacademy.eventregister.models.User;
-import com.greenfoxacademy.eventregister.services.UserServiceImpl;
+import com.greenfoxacademy.eventregister.models.Registrants;
+import com.greenfoxacademy.eventregister.services.RegistrantServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,15 +10,15 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class EventAppRestController {
   @Autowired
-  UserServiceImpl userService;
+  RegistrantServiceImpl userService;
 
   @PostMapping("/registeradmin")
-  public User user(@RequestBody(required = false) User user ){
-    if (user == null){
+  public Registrants user(@RequestBody(required = false) Registrants registrants){
+    if (registrants == null){
       return null;
     } else {
-      userService.save(user);
-      return user;
+      userService.save(registrants);
+      return registrants;
     }
   }
 }

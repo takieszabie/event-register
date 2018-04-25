@@ -9,26 +9,26 @@ import javax.persistence.Id;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Entity
-public class User {
+public class Registrants {
 
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
   private long id;
-  private String userName;
+  private String registrantName;
   private String familyName;
   private String givenName;
   private String emailAddress;
   private boolean isAdmin;
 
-  public User(String userName, String familyName, String givenName, String emailAddress, boolean isAdmin) {
-    this.userName = userName;
+  public Registrants(String registrantName, String familyName, String givenName, String emailAddress, boolean isAdmin) {
+    this.registrantName = registrantName;
     this.familyName = familyName;
     this.givenName = givenName;
     this.emailAddress = emailAddress;
     this.isAdmin = isAdmin;
   }
 
-  public User() {
+  public Registrants() {
   }
 
   public long getId() {
@@ -39,12 +39,12 @@ public class User {
     this.id = id;
   }
 
-  public String getUserName() {
-    return userName;
+  public String getRegistrantName() {
+    return registrantName;
   }
 
-  public void setUserName(String userName) {
-    this.userName = userName;
+  public void setRegistrantName(String registrantName) {
+    this.registrantName = registrantName;
   }
 
   public String getFamilyName() {

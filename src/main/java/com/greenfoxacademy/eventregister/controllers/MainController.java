@@ -1,8 +1,8 @@
 package com.greenfoxacademy.eventregister.controllers;
 
-import com.greenfoxacademy.eventregister.models.User;
+import com.greenfoxacademy.eventregister.models.Registrants;
 import com.greenfoxacademy.eventregister.services.EventServiceIpml;
-import com.greenfoxacademy.eventregister.services.UserServiceImpl;
+import com.greenfoxacademy.eventregister.services.RegistrantServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class MainController {
 
   @Autowired
-  UserServiceImpl userService;
+  RegistrantServiceImpl userService;
 
   @Autowired
   EventServiceIpml eventService;
@@ -27,7 +27,7 @@ public class MainController {
 
   @GetMapping("/register")
   public String showRegister(Model model) {
-    model.addAttribute("user", new User());
+    model.addAttribute("user", new Registrants());
     return "register";
   }
 
@@ -37,8 +37,8 @@ public class MainController {
   }
 
   @PostMapping("/register")
-  public String registerNewUser(@ModelAttribute User filledUser) {
-    userService.save(filledUser);
+  public String registerNewUser(@ModelAttribute Registrants filledRegistrants) {
+    userService.save(filledRegistrants);
     return "redirect:/";
   }
 }

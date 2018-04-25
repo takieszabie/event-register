@@ -1,9 +1,7 @@
 package com.greenfoxacademy.eventregister;
 
-import com.greenfoxacademy.eventregister.models.Event;
-import com.greenfoxacademy.eventregister.models.User;
 import com.greenfoxacademy.eventregister.repositories.EventRepository;
-import com.greenfoxacademy.eventregister.repositories.UserRepository;
+import com.greenfoxacademy.eventregister.repositories.RegistrantRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -15,7 +13,7 @@ public class EventregisterApplication implements CommandLineRunner{
   EventRepository eventRepository;
 
   @Autowired
-  UserRepository userRepository;
+  RegistrantRepository registrantRepository;
 
 	public static void main(String[] args) {
 		SpringApplication.run(EventregisterApplication.class, args);
