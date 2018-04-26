@@ -1,14 +1,11 @@
 package com.greenfoxacademy.eventregister.models;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Entity
+@Table(name = "user")
 public class Registrants {
 
   @Id

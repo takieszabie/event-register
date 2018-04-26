@@ -1,6 +1,16 @@
 package com.greenfoxacademy.eventregister.models;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class ApplicationUser {
+
+  @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  private long userId;
   private String username;
   private String password;
 
@@ -10,6 +20,14 @@ public class ApplicationUser {
   }
 
   public ApplicationUser() {
+  }
+
+  public long getUserId() {
+    return userId;
+  }
+
+  public void setUserId(long userId) {
+    this.userId = userId;
   }
 
   public String getUsername() {
